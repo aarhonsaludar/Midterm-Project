@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Registration</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/sign-in.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <img src="../assets/images/logo.png" alt="Logo" class="mb-3" height="72">
+                            <h2 class="fw-bold">Teacher Registration</h2>
+                        </div>
+                        
+                        <form id="teacherRegistrationForm">
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="txtFirstName" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="txtLastName" required>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="txtEmail" required>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Subject/Specialization</label>
+                                    <input type="text" class="form-control" id="txtSubject" required>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="txtPassword" required>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="txtConfirmPassword" required>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <button class="w-100 btn btn-primary btn-lg" type="submit">Register</button>
+                            
+                            <p class="mt-3 text-center">
+                                Already have an account? <a href="teacher-login.html">Login here</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/registration-teacher.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>

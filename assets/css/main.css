@@ -1,0 +1,165 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f1ff;
+}
+
+header {
+    background: #fefeff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-item{
+  padding: 5px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.bg-body-primary{
+  background: #fefeff;
+}
+
+.table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.table th {
+    background-color: #35424a;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2b3854;
+    color: white;
+}
+
+.btn-primary:hover {
+  background-color: #142341;
+  color: white;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, select:focus {
+    border-color: #5cb85c;
+    outline: none;
+}
+
+.nav-item:hover{
+    background-color: #f1f0fd;
+}
+
+.active{
+  background-color: #f1f0fd;
+}
+
+footer{
+  background-color: #fefeff;
+}
+
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2.25rem;
+  }
+  
+  .blog-header-logo:hover {
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  }
+  
+  .flex-auto {
+    flex: 0 0 auto;
+  }
+  
+  .h-250 { height: 250px; }
+  @media (min-width: 768px) {
+    .h-md-250 { height: 250px; }
+  }
+  
+  /* Pagination */
+  .blog-pagination {
+    margin-bottom: 4rem;
+  }
+  
+  /*
+   * Blog posts
+   */
+  .blog-post {
+    margin-bottom: 4rem;
+  }
+  .blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #727272;
+  }

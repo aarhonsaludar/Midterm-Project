@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Dashboard</title>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid mb-4">
+        <header class="border-bottom lh-1 py-2">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <img class="mb-4" src="../assets/images/logo.png" alt="" width="80" height="80">
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Student Dashboard</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-sm btn-primary" href="../index.html">Logout</a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <!-- Student Profile Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center fw-bold">Student Profile</h3>
+                        <div class="text-center mb-3">
+                            <img src="../assets/images/logo.png" alt="Student Photo" class="rounded-circle" width="100">
+                        </div>
+                        <div id="studentInfo">
+                            <p><strong>Name:</strong> <span id="studentName">Loading...</span></p>
+                            <p><strong>Student ID:</strong> <span id="studentId">Loading...</span></p>
+                            <p><strong>Section:</strong> <span id="studentSection">Loading...</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grades Card -->
+            <div class="col-md-8 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Academic Performance</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Midterm</th>
+                                    <th>Finals</th>
+                                    <th>Average</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gradesTable">
+                                <!-- Grades will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Card -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Attendance Record</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Subject</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendanceTable">
+                                <!-- Attendance will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-3 pt-3 text-center">
+        <p>© 2024 Student Record Management System</p>
+    </footer>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const studentNumber = localStorage.getItem('currentStudent');
+            if (!studentNumber) {
+                window.location.href = '../index.html';
+                return;
+            }
+
+            const students = JSON.parse(localStorage.getItem('students') || '[]');
+            const student = students.find(s => s.studentNumber === studentNumber);
+
+            if (student) {
+                document.getElementById('studentName').textContent = `${student.firstName} ${student.lastName}`;
+                document.getElementById('studentId').textContent = student.studentNumber;
+                document.getElementById('studentSection').textContent = student.section;
+            } else {
+                localStorage.removeItem('currentStudent');
+                window.location.href = '../index.html';
+            }
+        });
+    </script>
+</body>
+</html>
