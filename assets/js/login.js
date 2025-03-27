@@ -3,23 +3,18 @@ const defaultAdmin = {
     passwordAdmin: 'admin123'
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
-    const submitButton = loginForm.querySelector('button[type="submit"]');
+document.getElementById("loginBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    const txtEmail = document.getElementById('txtEmail').value;
+    const txtPassword = document.getElementById('txtPassword').value;
 
-    submitButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        
-        const txtEmail = document.getElementById('txtEmail').value;
-        const txtPassword = document.getElementById('txtPassword').value;
-
-        if (txtEmail === defaultAdmin.emailAdmin && txtPassword === defaultAdmin.passwordAdmin) {
-            sessionStorage.setItem('adminLoggedIn', 'true');
-            window.location.href = 'dashboard-admin.html';
-        } else {
-            alert('Invalid credentials. Please try again.');
-        }
-    });
+    if (txtEmail === defaultAdmin.emailAdmin && txtPassword === defaultAdmin.passwordAdmin) {
+        sessionStorage.setItem('adminLoggedIn', 'true');
+        window.location.href = 'dashboard-admin.html';
+    } else {
+        alert('Invalid credentials. Please try again.');
+    }
 });
 
 function checkAdminSession() {
